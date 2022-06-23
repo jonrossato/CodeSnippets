@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Ripple Efect</title>
+</head>
+<body>
+    <div class="wrapper">
+       <div class="text">
+          Botão Efeito Ondulação
+       </div>
+       <div class="btns">
+          <a href="#">Clique aqui</a>
+          <a href="#">Clique aqui</a>
+       </div>
+    </div>
+    <script>
+       const buttons = document.querySelectorAll("a");
+       buttons.forEach((button) => {
+         button.onclick = function(e){
+           let x = e.clientX - e.target.offsetLeft;
+           let y = e.clientY - e.target.offsetTop;
+           let ripple = document.createElement("span");
+           ripple.style.left = `${x}px`;
+           ripple.style.top = `${y}px`;
+           this.appendChild(ripple);
+           setTimeout(function(){
+             ripple.remove();
+           }, 600); // 1second = 1000ms
+         }
+       });
+      </script>
+ </body>
+</html>

@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #1a1a1a;
+}
+.icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 25%;
+}
+.icon i {
+  width: 100px;
+  height: auto;
+  font-size: 100px;
+  text-shadow: 0 0 25px;
+  animation: animacao 1s infinite linear
+}
+@keyframes animacao {
+  0%,100% {
+    color: #6889e3;
+  }
+  25% {
+    color: #3ac95c;
+  }
+  50% {
+    color: #c9763a;
+  }
+  75% {
+    color: #c914a5;
+  }
+}
